@@ -34,10 +34,10 @@ Hardware – PCs, Cyclone II , USB flasher
 Developed by:GOKUL SHARAN R
  RegisterNumber:212223040052
 */
-module ex2(a,b,c,d,w,x,y,z,f1,f2);
+module boolean_top(a,b,c,d,w,x,y,z,f1,f2);
 input a,b,c,d,w,x,y,z;
 output f1,f2;
-wire adash,bdash,cdash,ddash,ydash,p,q,r,s,t,u;
+wire adash,bdash,cdash,ddash,p,q,r,s,t,u;
 not(adash,a);
 not(bdash,b);
 not(cdash,c);
@@ -47,9 +47,14 @@ and(p,bdash,ddash);
 and(q,adash,b,d);
 and(r,a,b,cdash);
 or(f1,p,q,r);
+and(s,ydash,z);
+and(t,x,y);
+and(u,w,y);
+or(f2,s,t,u);
 endmodule
 ```
 **Output:**
+![image](https://github.com/Gokztechz/BOOLEAN_FUNCTION_MINIMIZATION/assets/117667038/49e62d68-8a31-4c7a-ba2c-af6c4149c486)
 
 **RTL realization**
 ![image](https://github.com/Gokztechz/BOOLEAN_FUNCTION_MINIMIZATION/assets/117667038/6cfe9cab-3ceb-4a73-9a09-d090c1234f4e)
